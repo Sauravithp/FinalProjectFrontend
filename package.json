@@ -1,0 +1,22 @@
+{
+  "name": "finalprojectfrontend",
+  "version": "1.0.0",
+  "description": "Playlist frontend",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sauravithp/FinalProjectFrontend.git"
+  },
+  "author": "Sauravi Thapa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sauravithp/FinalProjectFrontend/issues"
+  },
+  "homepage": "https://github.com/Sauravithp/FinalProjectFrontend#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
