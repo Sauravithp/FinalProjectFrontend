@@ -37,7 +37,8 @@ function addSong(node) {
                 dataTable.innerHTML += "<tr><td>" + tblData[i].songId + "</td>" +
                     "<td>" + tblData[i].title + "</td>" +
                     "<td>" + tblData[i].releaseDate + "</td>" +
-                    "<td><button id='remove'>Delete</button><button id='play'>Play</button></td>" +
+                    "<td><button id='remove'>Delete</button><button id='play' onclick='displayIframe(this)' >Play</button></td>" +
+                    "<div id='iframeDisplay' hidden></div> "+
                     "</tr>"
             }
         }).catch(error => {
@@ -73,4 +74,12 @@ function removeSong(node) {
     location.reload();
 
 }
+
+function displayIframe(event) {
+    const row = upTo(event, 'tr');
+    const songId=row.parentNode.querySelector('td').innerText;
+    document.getElementById("iframeDisplay").innerHTML = "<iframe src=`${}` height=\"200\" width=\"300\" ></iframe>";
+
+}
+
 
