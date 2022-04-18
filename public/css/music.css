@@ -61,7 +61,7 @@ p{
 }
 
 button {
-    background-color: navajowhite; /* Green */
+    background-color: lightslategray; /* Green */
     border: none;
     padding: 10px 20px;
     text-align: center;
@@ -82,8 +82,9 @@ button:hover{
 }
 
 #input-search{
+    background-color: lightslategray; /* Green */
     padding: 10px 20px;
-   background-color: navajowhite;
     border-radius: 9px;
+    border-color: black;
 
 }
