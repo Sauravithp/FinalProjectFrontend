@@ -1,0 +1,21 @@
+body{
+    background-color: antiquewhite;
+}
+
+#header {
+    background: #98937a;
+    height: 100px;
+    position: relative;
+    border-radius: 5px;
+}
+
+#login-header {
+    position: relative;
+}
+
+#logout-detail{
+    position: absolute;
+    right: 10px;
+    top: 35px;
+}
+
