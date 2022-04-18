@@ -33,7 +33,7 @@ table {
     font-family: arial, sans-serif;
     border-collapse: collapse;
     width: 100%;
-    margin-top: 100px;
+    margin-top: 10px;
 }
 
 
@@ -46,4 +46,17 @@ td, th {
 
 tr:nth-child(even) {
     background-color: #dddddd;
+}
+
+h3{
+    font-style: oblique;
+}
+
+span{
+    font-weight: bold;
+    color: red;
+}
+
+#remove{
+    margin-right: 20px;
 }
