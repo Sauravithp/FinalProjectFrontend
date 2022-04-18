@@ -2,9 +2,6 @@ window.onload = function () {
     getSonglist();
     getPlayList();
     const logout = document.getElementById('logout');
-    const remove = document.getElementById('delete');
-    const add = document.getElementById('add');
-    const play = document.getElementById('play');
     const search = document.getElementById("btn-search")
 
     search.addEventListener('click', function () {
@@ -110,16 +107,20 @@ window.onload = function () {
             .then((json) => {
                 console.log(json);
                 const tblData = json;
-                console.log(tblData[0])
-                console.log(tblData[0].id)
+                console.log(tblData)
 
-                for (let i = 0; i < tblData.length; i++) {
-                    dataTable.innerHTML += "<tr><td>" + tblData[i].songId + "</td>" +
-                        "<td>" + tblData[i].title + "</td>" +
-                        "<td>" + tblData[i].releaseDate + "</td>" +
-                        "<td><button id='remove' onclick='removeSong(this)'>Delete</button><button id='play'>Play</button></td>" +
-                        "</tr>"
+                if(tblData.length>0){
+                    for (let i = 0; i < tblData.length; i++) {
+                        dataTable.innerHTML += "<tr><td>" + tblData[i].songId + "</td>" +
+                            "<td>" + tblData[i].title + "</td>" +
+                            "<td>" + tblData[i].releaseDate + "</td>" +
+                            "<td><button id='remove' onclick='removeSong(this)'>Delete</button><button id='play'>Play</button></td>" +
+                            "</tr>"
+                    }
+                }else {
+                    dataTable.innerHTML='<p>Playlist empty</p>';
                 }
+
             }).catch(error => {
             console.log(error)
             document.getElementById("welcome").innerText = "Sorry, incorrect Username or password!!!!";
