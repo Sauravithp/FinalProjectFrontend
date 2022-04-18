@@ -1,6 +1,27 @@
-#navbar navbar-expand-md navbar-dark fixed-top bg-dark{
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: rosybrown;
+body{
+    background-color: antiquewhite;
+}
 
+#header {
+    background: #98937a;
+    height: 100px;
+    position: relative;
+    border-radius: 5px;
+}
+
+#login-details {
+    position: absolute;
+    right: 10px;
+    top: 35px;
+}
+
+#welcome{
+    width: 500px;
+    margin: auto;
+    padding-top: 50px;
+    padding-left: 150px;
+}
+
+#header-details{
+    padding-left: 50px;
 }
