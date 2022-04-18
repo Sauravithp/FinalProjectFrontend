@@ -1,4 +1,4 @@
-body{
+body {
     background-color: antiquewhite;
 }
 
@@ -13,9 +13,37 @@ body{
     position: relative;
 }
 
-#logout-detail{
+#logout-detail {
     position: absolute;
     right: 10px;
     top: 35px;
 }
 
+/*#song-table{*/
+/*    padding: 30px 30px 30px 300px;*/
+/*    width: 100px;*/
+/*}*/
+
+/* td {*/
+/*    border: 5px solid black;*/
+/*     padding: 25px 25px 25px 25px;*/
+/*}*/
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 100px;
+}
+
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: center;
+    padding: 8px;
+}
+
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
