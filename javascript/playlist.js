@@ -42,7 +42,33 @@ function addSong(node) {
             }
         }).catch(error => {
         console.log(error)
-        document.getElementById("welcome").innerText = "Sorry, incorrect Username or password!!!!";
+    });
+    location.reload();
+
+}
+
+function removeSong(node) {
+    const row = upTo(node, 'tr');
+    const songId=row.parentNode.querySelector('td').innerText;
+    console.log(songId)
+    fetch(`http://localhost:9999/playList/${songId}`, {
+        method: 'DELETE',
+        headers: {
+            'Content-type': 'application/json; charset=UTF-8',
+            'token': sessionStorage.getItem("token"),
+        },
+    })
+        .then((response) => {
+            if (response.status == 500) {
+                throw Error("Sorry, something went wrong!!!")
+            } else {
+                return response.json();
+            }
+        })
+        .then((json) => {
+            console.log(json);
+        }).catch(error => {
+        console.log(error)
     });
     location.reload();
 

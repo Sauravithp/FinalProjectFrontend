@@ -38,7 +38,7 @@ window.onload = function () {
                     dataTable.innerHTML += "<tr><td>" + tblData[i].id + "</td>" +
                         "<td>" + tblData[i].title + "</td>" +
                         "<td>" + tblData[i].releaseDate + "</td>" +
-                        '<td><button id="add" onclick="addSong(this)">Add</button></td>' +
+                        "<td><button id='add' onclick='addSong(this)'>Add</button></td>" +
                         "</tr>"
                 }
             }).catch(error => {
@@ -74,7 +74,7 @@ window.onload = function () {
                     dataTable.innerHTML += "<tr><td>" + tblData[i].songId + "</td>" +
                         "<td>" + tblData[i].title + "</td>" +
                         "<td>" + tblData[i].releaseDate + "</td>" +
-                        "<td><button id='remove'>Delete</button><button id='play'>Play</button></td>" +
+                        "<td><button id='remove' onclick='removeSong(this)'>Delete</button><button id='play'>Play</button></td>" +
                         "</tr>"
                 }
             }).catch(error => {
