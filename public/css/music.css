@@ -3,6 +3,13 @@ body {
     background-image: url('../image/background.jpeg');
 }
 
+#username,#password{
+    background-color: lightslategray; /* Green */
+    padding: 10px 20px;
+    border-radius: 9px;
+    border-color: black;
+}
+
 #header {
     height: 100px;
     position: relative;
@@ -82,9 +89,8 @@ button:hover{
 }
 
 #input-search{
-    background-color: lightslategray; /* Green */
+    background-color: white; /* Green */
     padding: 10px 20px;
     border-radius: 9px;
-    border-color: black;
 
 }
