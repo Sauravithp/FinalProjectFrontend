@@ -123,7 +123,7 @@ window.onload = function () {
                             "</tr>"
                     }
                 } else {
-                    dataTable.innerHTML = '<p>Playlist empty</p>';
+                    dataTable.innerHTML = '<p>No Songs in your playlist</p>';
                 }
 
             }).catch(error => {
