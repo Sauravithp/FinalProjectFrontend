@@ -6,10 +6,10 @@ window.onload = function () {
 
     search.addEventListener('click', function () {
         let searchInput = document.getElementById("input-search").value;
-        if(searchInput=='' ||searchInput==' '){
-            searchInput=undefined;
+        if (searchInput == '' || searchInput == ' ') {
+            searchInput = undefined;
         }
-        if ( searchInput != undefined) {
+        if (searchInput != undefined) {
             let dataTable = document.getElementById('song-table');
             fetch(`http://localhost:9999/songs?songName=${searchInput}`, {
                 method: 'GET',
@@ -34,18 +34,19 @@ window.onload = function () {
                     console.log(json);
                     const tblData = json;
                     console.log(tblData[0])
-                    console.log(tblData[0].id)
-
-                    for (let i = 0; i < tblData.length; i++) {
-                        dataTable.innerHTML += "<tr><td>" + tblData[i].id + "</td>" +
-                            "<td>" + tblData[i].title + "</td>" +
-                            "<td>" + tblData[i].releaseDate + "</td>" +
-                            "<td><button id='add' onclick='addSong(this)'>Add</button></td>" +
-                            "</tr>"
+                    if (tblData.length > 0) {
+                        for (let i = 0; i < tblData.length; i++) {
+                            dataTable.innerHTML += "<tr><td>" + tblData[i].id + "</td>" +
+                                "<td>" + tblData[i].title + "</td>" +
+                                "<td>" + tblData[i].releaseDate + "</td>" +
+                                "<td><button id='add' onclick='addSong(this)'>Add</button></td>" +
+                                "</tr>"
+                        }
+                    } else {
+                        dataTable.innerHTML = '<p>Sorry,Song Not Found!!!</p>';
                     }
                 }).catch(error => {
                 console.log(error)
-                document.getElementById("welcome").innerText = "Sorry, incorrect Username or password!!!!";
             });
         }
     });
@@ -76,18 +77,20 @@ window.onload = function () {
                 console.log(json);
                 const tblData = json;
                 console.log(tblData[0])
-                console.log(tblData[0].id)
-
-                for (let i = 0; i < tblData.length; i++) {
-                    dataTable.innerHTML += "<tr><td>" + tblData[i].id + "</td>" +
-                        "<td>" + tblData[i].title + "</td>" +
-                        "<td>" + tblData[i].releaseDate + "</td>" +
-                        "<td><button id='add' onclick='addSong(this)'>Add</button></td>" +
-                        "</tr>"
+                if (tblData.length > 0) {
+                    for (let i = 0; i < tblData.length; i++) {
+                        dataTable.innerHTML += "<tr><td>" + tblData[i].id + "</td>" +
+                            "<td>" + tblData[i].title + "</td>" +
+                            "<td>" + tblData[i].releaseDate + "</td>" +
+                            "<td><button id='add' onclick='addSong(this)'>Add</button></td>" +
+                            "</tr>"
+                    }
+                } else {
+                    dataTable.innerHTML = '<p>Sorry,Song Not Found!!!</p>';
                 }
+
             }).catch(error => {
             console.log(error)
-            document.getElementById("welcome").innerText = "Sorry, incorrect Username or password!!!!";
         });
     }
 
@@ -119,7 +122,7 @@ window.onload = function () {
                             "<td>" + tblData[i].title + "</td>" +
                             "<td>" + tblData[i].releaseDate + "</td>" +
                             "<td><button id='remove' onclick='removeSong(this)'>Delete</button>" +
-                            "<button id='play' onclick='displayIframe(this)' >Play</button></td>" +
+                            "<button id='play' >Play</button></td>" +
                             "</tr>"
                     }
                 } else {
@@ -128,7 +131,6 @@ window.onload = function () {
 
             }).catch(error => {
             console.log(error)
-            document.getElementById("welcome").innerText = "Sorry, incorrect Username or password!!!!";
         });
     }
 }
