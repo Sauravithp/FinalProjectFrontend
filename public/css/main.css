@@ -45,3 +45,12 @@ button:hover{
 #header-details{
     padding-left: 50px;
 }
+
+
+
+#username,#password{
+    background-color: white; /* Green */
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-color: black;
+}

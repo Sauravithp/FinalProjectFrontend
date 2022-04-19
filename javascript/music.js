@@ -1,6 +1,7 @@
 window.onload = function () {
     getSonglist();
     getPlayList();
+     document.getElementById('username').innerText=sessionStorage.getItem('username');
     const logout = document.getElementById('logout');
     const search = document.getElementById("btn-search")
 
@@ -53,7 +54,7 @@ window.onload = function () {
 
     logout.addEventListener('click', function () {
         sessionStorage.clear();
-        location.replace('./app.html')
+        location.replace('./main.html')
     })
 
 

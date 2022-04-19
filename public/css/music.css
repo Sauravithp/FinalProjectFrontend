@@ -3,12 +3,6 @@ body {
     background-image: url('../image/background.jpeg');
 }
 
-#username,#password{
-    background-color: lightslategray; /* Green */
-    padding: 10px 20px;
-    border-radius: 9px;
-    border-color: black;
-}
 
 #header {
     height: 100px;
@@ -31,6 +25,7 @@ body {
     right: 100px;
     top: 35px;
     border-radius: 5px;
+    border-color: black;
 }
 
 table {
@@ -49,6 +44,7 @@ td, th {
 
 
 h3{
+    padding-top: 30px;
     font-style: oblique;
 }
 
@@ -93,4 +89,8 @@ button:hover{
     padding: 10px 20px;
     border-radius: 9px;
 
+}
+
+#username{
+    padding-left: 4px;
 }

@@ -30,6 +30,7 @@ window.onload = function () {
             })
             .then((json) => {
                 sessionStorage.setItem("token", json);
+                sessionStorage.setItem("username",username.value);
                 console.log("json--->" + json)
                 location.replace('./music.html')
             }).catch(error =>{
